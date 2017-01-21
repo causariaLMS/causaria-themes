@@ -1,0 +1,67 @@
+## mako
+<%! 
+  from django.core.urlresolvers import reverse
+  from django.utils.translation import ugettext as _
+  from edxmako.shortcuts import marketing_link
+%>
+<%namespace name='static' file='/static_content.html'/>
+<%namespace name='theme_settings' file='theme-settings.html'/>
+
+<%
+  theme_vars = theme_settings.get_theme_vars()
+  effective_date = theme_vars['effective_date']
+%>
+
+<div class="wrapper-footer">
+  <footer id="footer-openedx">
+    <div class="colophon">
+      <div class="footer-logo">
+	  <br />
+        <a href="/">
+            <img src="${static.url('images/lagunita-logo.png')}" height="90" width="auto" alt="MGPPU Online" />
+        </a>
+      </div>
+      <nav class="nav-colophon">
+        <ol>
+          <li><a href="${reverse('tos')}">${_('Terms of Service')} <br />
+            (${_('Revised {date}').format(date=effective_date)})
+          </a></li>
+          <li><a href="${reverse('tos')}#privacy">${_('Privacy Policy')} <br />
+            (${_('Revised {date}').format(date=effective_date)})
+          </a></li>
+          <li><a href="${reverse('tos')}#copyright">${_('Copyright')}</a></li>
+          <li><a href="${marketing_link('ABOUT')}#contact">${_('Contact')}</a></li>
+        </ol>
+      </nav>
+    </div>
+    <div class="references">
+      <a id="stanford-footer-edx-image" href="https://open.edx.org">
+        <span class="sr">${_('Powered by {platform_name}').format(platform_name='Open edX')}</span>
+      </a>
+    </div>
+  </footer>
+</div>
+
+<div id="su-footer">
+  <div class="su-container">
+    <div class="su-row">
+      <div id="su-footer-logo" class="span2">
+        <a href="http://mgppu.ru">
+          <img src="${static.url('images/footer-stanford-logo@2x.png')}" alt="mgppu" width="105" height="49"/>
+        </a>
+      </div>
+      <div id="su-footer-text" class="span10">
+        <ul>
+          <li class="home"><a href="http://mgppu.ru">На сайт вуза</a></li>
+          <li class="maps alt"><a href="http://fpkmgppu.ru">На сайт факультета</a></li>
+          <li class="search-stanford"><a href="http://mgppu.ru/search/">Поиск</a></li>
+          <li class="terms alt"><a href="http://mgppu.ru/site/terms.html">Правила сайта</a></li>
+          <li class="copyright"><a href="http://mgppu.ru/site/copyright.html">Copyright</a></li>
+        </ul>
+        <div class="clear"></div>
+         <p class="copyright vcard">&copy;2000 <span class="fn org">Московский Государственный Психолого-Педагогический Университет</span>, <span class="adr"> <span class="locality">Москва</span>, <span class="region">Шелепихинская наб., 2А, корп. Г, каб.402.</span> </span></p>
+        </div>
+      <div style="clear: both;"></div>
+    </div>
+  </div>
+</div>
