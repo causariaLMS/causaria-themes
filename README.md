@@ -41,4 +41,4 @@
 >     cd /edx/app/edxapp/edx-platform
 >     paver update_assets lms --settings=aws --themes=lagunita
 
-Должно получиться как здесь {{http://edx.fpkmgppu.ru}}
+Должно получиться как здесь [http://edx.fpkmgppu.ru](http://edx.fpkmgppu.ru "http://edx.fpkmgppu.ru")
