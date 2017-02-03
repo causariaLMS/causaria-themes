@@ -7,16 +7,16 @@
 >     flush_all
 >     quit
 
-## Шаг 2 - клонируем тему в /edx/edxapp/themes  ##
+## Шаг 2 - клонируем тему в /edx/app/edxapp/themes  ##
 
->     cd /edx/edxapp/themes 
+>     cd /edx/app/edxapp/themes
 > 
 >     clone https://github.com/causariaLMS/causaria-themes.git
 
 Шаг 3 - прописываем в *lms.env.json* 
 
  >     "COMPREHENSIVE_THEME_DIRS": [
->         "/edx/edxapp/themes"
+>         "/edx/app/edxapp/themes"
 > 
 >     "USE_CUSTOM_THEME":  true
 >  
@@ -29,9 +29,9 @@
 
 > удаляем всё из папки */var/tmp/mako_lms/*
 > 
->  удаляем *staticfiles* из папки */edx/var/edxapp*
+>  удаляем все из *staticfiles* по пути */edx/var/edxapp*
 >  
->  ставим права для edxapp на lagunita
+>  ставим права для edxapp:edxapp на /edx/app/edxapp/themes/lagunita
  
 
 Шаг 4 - компилим тему
